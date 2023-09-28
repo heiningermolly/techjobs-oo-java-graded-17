@@ -94,6 +94,7 @@ public class Job {
         return Objects.hash(id);
     }
 
+
     @Override
     public String toString() {
 //        if (name == null && employer == null && location == null && positionType == null && coreCompetency == null) {
