@@ -96,12 +96,15 @@ public class Job {
 
     @Override
     public String toString() {
+//        if (name == null && employer == null && location == null && positionType == null && coreCompetency == null) {
+//            throw new Exception("OOPS! This job does not seem to exist.")
+//        }
         return System.lineSeparator() +
                 "ID: " + id + System.lineSeparator() +
-                "Name: " + ((name == null) ? "Data not available" : name) + System.lineSeparator() +
-                "Employer: " + ((employer == null) ? "Data not available" : employer) + System.lineSeparator() +
-                "Location: " + ((location == null) ? "Data not available" : location) + System.lineSeparator() +
-                "Position Type: " + ((positionType == null) ? "Data not available" : positionType) + System.lineSeparator() +
-                "Core Competency: " + ((coreCompetency == null) ? "Data not available" : coreCompetency) + System.lineSeparator();
+                "Name: " + ((name == null || name == "") ? "Data not available" : name) + System.lineSeparator() +
+                "Employer: " + ((employer == null || employer.toString() == "" ) ? "Data not available" : employer) + System.lineSeparator() +
+                "Location: " + ((location == null || location.toString() == "") ? "Data not available" : location) + System.lineSeparator() +
+                "Position Type: " + ((positionType == null || positionType.toString() == "") ? "Data not available" : positionType) + System.lineSeparator() +
+                "Core Competency: " + ((coreCompetency == null || coreCompetency.toString() == "") ? "Data not available" : coreCompetency) + System.lineSeparator();
     }
 }

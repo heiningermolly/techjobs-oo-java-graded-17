@@ -78,6 +78,7 @@ public class TestTaskFive extends AbstractTest {
         Job job = createJob("Web Developer", "", "StL", "", "Java");
         String jobString = getJobString(job);
         assertEquals(jobString, job.toString());
+
     }
 
 }

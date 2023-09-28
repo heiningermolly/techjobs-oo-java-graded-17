@@ -41,11 +41,6 @@ public class JobTest {
     public void testToStringStartsAndEndsWithNewLine() {
         Job job1 = new Job("Goblin queen", new Employer("Goblin Tribe"), new Location("Enchanted Forest"), new PositionType("Monarch"), new CoreCompetency("Cruelty"));
         String str = (job1.toString());
-//        String str = System.lineSeparator() + "hello" + System.lineSeparator();
-//        System.out.println(str.substring(1, 2));
-//        System.out.println(str.indexOf(lineSeparator()));
-//        System.out.println(str.substring(str.length()-1, str.length()).equals(lineSeparator()));
-
         assertEquals(str.substring(0, 1), lineSeparator());
         assertEquals(str.substring(str.length()-1, str.length()), lineSeparator());
     }
@@ -71,11 +66,11 @@ public class JobTest {
     @Test
     public void testToStringHandlesEmptyField() {
         Job job1 = new Job();
-        Job job2 = new Job(null, new Employer("Goblin Tribe"), new Location("Enchanted Forest"), new PositionType("Monarch"), new CoreCompetency("Cruelty"));
-        Job job3 = new Job("Goblin queen", null, new Location("Enchanted Forest"), new PositionType("Monarch"), new CoreCompetency("Cruelty"));
-        Job job4 = new Job("Goblin queen", new Employer("Goblin Tribe"), null, new PositionType("Monarch"), new CoreCompetency("Cruelty"));
-        Job job5 = new Job("Goblin queen", new Employer("Goblin Tribe"), new Location("Enchanted Forest"), null, new CoreCompetency("Cruelty"));
-        Job job6 = new Job("Goblin queen", new Employer("Goblin Tribe"), new Location("Enchanted Forest"), new PositionType("Monarch"), null);
+        Job job2 = new Job("", new Employer("Goblin Tribe"), new Location("Enchanted Forest"), new PositionType("Monarch"), new CoreCompetency("Cruelty"));
+        Job job3 = new Job("Goblin queen", new Employer(""), new Location("Enchanted Forest"), new PositionType("Monarch"), new CoreCompetency("Cruelty"));
+        Job job4 = new Job("Goblin queen", new Employer("Goblin Tribe"), new Location(""), new PositionType("Monarch"), new CoreCompetency("Cruelty"));
+        Job job5 = new Job("Goblin queen", new Employer("Goblin Tribe"), new Location("Enchanted Forest"), new PositionType(""), new CoreCompetency("Cruelty"));
+        Job job6 = new Job("Goblin queen", new Employer("Goblin Tribe"), new Location("Enchanted Forest"), new PositionType("Monarch"), new CoreCompetency(""));
         Job job7 = new Job("Goblin queen", new Employer("Goblin Tribe"), new Location("Enchanted Forest"), new PositionType("Monarch"), new CoreCompetency("Cruelty"));
         assertTrue(job1.toString().contains("Data not available"));
         assertTrue(job2.toString().contains("Data not available"));
