@@ -93,4 +93,15 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    @Override
+    public String toString() {
+        return System.lineSeparator() +
+                "ID: " + id + System.lineSeparator() +
+                "Name: " + ((name == null) ? "Data not available" : name) + System.lineSeparator() +
+                "Employer: " + ((employer == null) ? "Data not available" : employer) + System.lineSeparator() +
+                "Location: " + ((location == null) ? "Data not available" : location) + System.lineSeparator() +
+                "Position Type: " + ((positionType == null) ? "Data not available" : positionType) + System.lineSeparator() +
+                "Core Competency: " + ((coreCompetency == null) ? "Data not available" : coreCompetency) + System.lineSeparator();
+    }
 }
